@@ -1,0 +1,8 @@
+#/your_file_directory/
+
+# estimated coverage in fastq file:
+$awk '{if(NR%4==2) {bases += length} } END{print bases/1665}' roommate.fastq
+
+#actual coverage in mpileup file:
+$awk '{ {count++; bases += $4} } END{print bases/count}' roommate.mpileup
+
